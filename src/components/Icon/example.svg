@@ -1,0 +1,14 @@
+<svg width='14' height='20' viewBox='0 0 14 20' xmlns='http://www.w3.org/2000/svg'
+xmlnsXlink='http://www.w3.org/1999/xlink'>
+    <defs>
+        <path d='M12,2 C7.33333333,2 5,5.75 5,9.5 C5,13.25 12,22 12,22 C12,22 19,13.25 19,9.5 C19,5.75 16.6666667,2 12,2 Z M12,12 C10.7113388,11.9999999 9.66666656,10.8807083 9.66666656,9.5 C9.66666662,8.11929167 10.7113388,7 11.9999999,7 C13.288661,7.00000006 14.3333332,8.11929167 14.3333332,9.5 C14.3333332,10.8807082 13.288661,11.9999999 11.9999999,11.9999999 Z'
+        id='path-1' />
+    </defs>
+    <g id='💎-Symbols' fill='none' fillRule='evenodd'>
+        <g id='Icon/Map-Marker' transform='translate(-5 -2)'>
+            <mask id='mask-2' fill='#fff'>
+                <use xlinkHref='#path-1' />
+            </mask>
+        </g>
+    </g>
+</svg>
