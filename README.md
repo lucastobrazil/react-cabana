@@ -4,5 +4,10 @@ Work in progress build of the [Cabana Design System](https://cabanadesignsystem.
 
 # Basics:
 - Currently built off create-react-app
-- SCSS in CSS modules 'mode' 
+- Using `styled-components` with `styled-system`
 - Working through each element of the design system and implementing a first round
+
+# Todo
+- Build up components
+- "Convert" to an installable npm package
+- Build demo page that consumes library
