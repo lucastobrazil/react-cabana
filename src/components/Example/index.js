@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button, ButtonSmall, ButtonLarge } from '../Button';
 import { HeadingFour, HeadingFive, SmallText } from '../Text';
-import { Card } from '../Card';
 import styled from 'styled-components';
-import { space, maxWidth, themeGet, padding } from 'styled-system';
+import { space, maxWidth, themeGet } from 'styled-system';
 const imageUrl = require('./yellow.png');
 
 // Page-specific
@@ -19,9 +18,9 @@ const FeatureImageContainer = styled.div`
     }
 `;
 
-const FeatureImage = ({ src, ...props }) => (
+const FeatureImage = ({ src, alt = 'wee', ...props }) => (
     <FeatureImageContainer {...props}>
-        <img src={src} />
+        <img src={src} alt={alt} />
     </FeatureImageContainer>
 );
 
@@ -38,7 +37,6 @@ const Container = styled.div`
 // Generic
 const Input = styled.input`
     ${space};
-    ${padding};
     flex-basis: 100%;
     border-radius: ${themeGet('radii.large')};
     color: ${themeGet('colors.lightGrey')};
@@ -64,7 +62,7 @@ export default function Example() {
             </SmallText>
 
             <SmallText bold={true}>Just Arrived</SmallText>
-            <a href="#">
+            <a href="myhouse.com">
                 See all <i>arrow</i>
             </a>
             <div style={{ display: 'flex' }}>

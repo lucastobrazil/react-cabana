@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeadingOne, SmallText } from '../Text';
 import Box from '../Box';
-import { Button, ButtonSmall, ButtonLarge, ButtonIcon } from '.';
+import { Button, ButtonSmall, ButtonLarge } from '.';
 
 /* 
     In the real world you would probably define your own Primary Buttons
@@ -41,9 +41,7 @@ export default function ButtonDocs() {
                             <SmallText>Primary</SmallText>
                         </td>
                         <td>
-                            <ButtonSmall {...primaryProps} mt={30}>
-                                Small
-                            </ButtonSmall>
+                            <ButtonSmall {...primaryProps}>Small</ButtonSmall>
                         </td>
                         <td>
                             <Button {...primaryProps}>Button</Button>
@@ -57,20 +55,17 @@ export default function ButtonDocs() {
                             <SmallText>Icon</SmallText>
                         </td>
                         <td>
-                            <ButtonSmall {...primaryProps}>
-                                <ButtonIcon fill="white" />
+                            <ButtonSmall {...primaryProps} iconLeft={true}>
                                 Small
                             </ButtonSmall>
                         </td>
                         <td>
-                            <Button {...primaryProps}>
-                                <ButtonIcon fill="white" />
+                            <Button {...primaryProps} iconLeft={true}>
                                 Button
                             </Button>
                         </td>
                         <td>
-                            <ButtonLarge {...primaryProps}>
-                                <ButtonIcon fill="white" />
+                            <ButtonLarge {...primaryProps} iconLeft={true} iconRight={true}>
                                 Button
                             </ButtonLarge>
                         </td>
@@ -85,14 +80,12 @@ export default function ButtonDocs() {
                             </ButtonSmall>
                         </td>
                         <td>
-                            <Button bg="success" color="error">
-                                <ButtonIcon fill="white" />
+                            <Button bg="success" color="error" iconLeft={true}>
                                 Button
                             </Button>
                         </td>
                         <td>
-                            <ButtonLarge bg="tertiary" color="warning">
-                                <ButtonIcon fill="primary" />
+                            <ButtonLarge bg="tertiary" color="warning" iconLeft={true}>
                                 Button
                             </ButtonLarge>
                         </td>
