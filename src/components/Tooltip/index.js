@@ -4,7 +4,7 @@ import ReactSimpleTooltip from 'react-simple-tooltip';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
-const StyledTooltip = styled(ReactSimpleTooltip).attrs({
+const Tooltip = styled(ReactSimpleTooltip).attrs({
     // These need to be added as 'attributes' to the underlying react-simple-tooltip
     /* 
         todo: these fallbacks are a bit hacky, because if the user enters values not 
@@ -22,7 +22,7 @@ const StyledTooltip = styled(ReactSimpleTooltip).attrs({
 `;
 
 // todo, try to set proptypes for colours etc using the styled system spreading
-StyledTooltip.propTypes = {
+Tooltip.propTypes = {
     arrow: PropTypes.number,
     bg: PropTypes.string,
     borderColor: PropTypes.string,
@@ -41,7 +41,7 @@ StyledTooltip.propTypes = {
     zIndex: PropTypes.number,
 };
 
-StyledTooltip.defaultProps = {
+Tooltip.defaultProps = {
     arrow: 8,
     bg: 'primary',
     borderColor: 'primary',
@@ -60,4 +60,4 @@ StyledTooltip.defaultProps = {
     zIndex: 1,
 };
 
-export default StyledTooltip;
+export default Tooltip;
