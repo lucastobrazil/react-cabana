@@ -6,6 +6,7 @@ import { CaptionText } from './components/Text';
 import ButtonDocs from './components/Button/docs';
 import Example from './components/Example';
 import IconDocs from './components/Icon/docs';
+import TooltipDocs from './components/Tooltip/docs';
 import { ButtonSmall } from './components/Button';
 
 // Important to reset browser styles
@@ -93,6 +94,7 @@ const StyleGuide = () => (
 const Playground = () => {
     return (
         <div>
+            <TooltipDocs />
             <IconDocs />
             <CaptionText>Todo</CaptionText>
             <ul>

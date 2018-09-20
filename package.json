@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "balloon-css": "^0.5.0",
     "featherico": "^1.9.0",
     "lucastobrazil-react-scripts-scss": "1.0.3",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-simple-tooltip": "^2.3.2",
     "styled-components": "^4.0.0-beta.3",
     "styled-system": "^3.1.0"
   },
