@@ -1,8 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import ReactSimpleTooltip from 'react-simple-tooltip';
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import { space, themeGet } from 'styled-system';
 
 const Tooltip = styled(ReactSimpleTooltip).attrs({
     // These need to be added as 'attributes' to the underlying react-simple-tooltip
@@ -15,6 +14,7 @@ const Tooltip = styled(ReactSimpleTooltip).attrs({
     border: props => themeGet(`colors.${props.borderColor}`, props.borderColor)(props),
     radius: props => parseInt(themeGet(`radii.${props.borderRadius}`, props.borderRadius)(props), 0),
 })`
+    ${space};
     & > div {
         color: ${({ color }) => themeGet(`colors.${color}`)};
         box-shadow: ${({ boxShadow }) => themeGet(`shadows.${boxShadow}`)};
@@ -23,7 +23,7 @@ const Tooltip = styled(ReactSimpleTooltip).attrs({
 
 // todo, try to set proptypes for colours etc using the styled system spreading
 Tooltip.propTypes = {
-    arrow: PropTypes.number,
+    arrow: PropTypes.oneOf([4, 8, 16, 24, 32]),
     bg: PropTypes.string,
     borderColor: PropTypes.string,
     borderRadius: PropTypes.oneOf(['none', 'small', 'large']),
@@ -53,9 +53,10 @@ Tooltip.defaultProps = {
     fadeEasing: 'ease',
     fixed: false,
     fontFamily: 'inherit',
-    fontSize: 'inherit',
+    fontSize: 'small',
     offset: 0,
-    padding: 16,
+    px: 2,
+    py: 1,
     placement: 'right',
     zIndex: 1,
 };
