@@ -5,7 +5,11 @@ import { HeadingFive as CardTitle, TextPrimitive as CardBodyText } from '../Text
 
 const DEFAULT_CARD_PADDING = 3;
 
-const Card = Box;
+const Card = styled(Box)`
+    // todo: this is just for images
+    overflow: hidden;
+`;
+
 const CardFooter = styled(Box)`
     border-top: 1px solid;
     border-top-color: ${({ borderColor }) => themeGet(`colors.${borderColor}`, borderColor)};
@@ -39,8 +43,11 @@ CardBodyText.defaultProps = {
     fontSize: 'small',
 };
 
-// todo the footer needs to do some calculation for the negatives based on the cardpadding value
-// maybe something like a util that sstyled system provides?
+/*
+    Footer needs to have the same mx, mb, mt values as set by the p value (padding) for the parent card
+    Basically, if the user wishes to define different padding on cards, they also need to set the margins
+    for the footer
+*/
 CardFooter.defaultProps = {
     borderColor: 'lightGrey',
     mx: -DEFAULT_CARD_PADDING,
@@ -49,6 +56,9 @@ CardFooter.defaultProps = {
     p: DEFAULT_CARD_PADDING,
 };
 
+/*
+    @Todo: Aspect ratio stuff
+*/
 CardImage.defaultProps = {
     src: require('./sample.png'),
     m: -DEFAULT_CARD_PADDING,
