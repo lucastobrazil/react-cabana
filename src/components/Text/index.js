@@ -25,11 +25,12 @@ TextPrimitive.propTypes = {
 TextPrimitive.defaultProps = {
     altFont: false,
     align: 'left',
-    bold: false,
+    fontWeight: 'normal',
 };
 
 /*
     Component Definitions
+    These are basically 'pre-styled' fonts
 */
 
 const getHeadingProps = ({ as, size }) => ({
@@ -53,6 +54,7 @@ const HeadingFour = props => <TextPrimitive {...getHeadingProps({ as: 'h4', size
 const HeadingFive = props => <TextPrimitive {...getHeadingProps({ as: 'h5', size: 'h5' })} {...props} />;
 
 export {
+    TextPrimitive,
     UberText,
     HeroText,
     LeadText,
