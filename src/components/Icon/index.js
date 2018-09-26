@@ -1,24 +1,29 @@
-import React from 'react';
-import { IconModulePraise } from 'featherico';
+import PropTypes from 'prop-types';
+import { IconX } from 'featherico';
 import styled from 'styled-components';
-import { fontSize, style } from 'styled-system';
+import { space, fontSize, style, alignSelf } from 'styled-system';
 
 const svgStrokeColor = style({
-    prop: 'stroke',
+    prop: 'color',
     cssProperty: 'stroke',
     key: 'colors',
 });
 
-const MyIcon = styled(IconModulePraise)`
+const Icon = styled(IconX)`
+    ${space};
+    ${alignSelf};
     ${fontSize};
     ${svgStrokeColor};
 `;
 
-MyIcon.defaultProps = {
-    stroke: 'primary',
+export default Icon;
+
+Icon.defaultProps = {
+    color: 'currentColor',
     fontSize: 'uber',
 };
 
-export default function Icon(props) {
-    return <MyIcon {...props} />;
-}
+Icon.propTypes = {
+    color: PropTypes.string,
+    fontSize: PropTypes.string,
+};
