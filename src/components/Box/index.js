@@ -1,11 +1,16 @@
 import styled from 'styled-components';
-import { space, width, fontSize, color } from 'styled-system';
+import { borderColor, border, borderRadius, boxShadow, space, width, fontSize, color, textAlign } from 'styled-system';
 
 const Box = styled.div`
   ${space}
   ${width}
   ${fontSize}
   ${color}
+  ${border}
+  ${borderColor}
+  ${borderRadius}
+  ${boxShadow}
+  ${textAlign}
 `;
 
 export default Box;
