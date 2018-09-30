@@ -36,7 +36,6 @@ const theme = {
         warning: '#FCEB3B',
         error: '#E6173E',
         white: '#ffffff',
-        pink: 'purple',
     },
     lineHeights: {
         uber: 1.08,
@@ -62,6 +61,7 @@ const theme = {
     radii: {
         none: '0',
         small: '4px',
+        medium: '10px',
         large: '100px',
     },
     maxWidths: {
@@ -69,6 +69,7 @@ const theme = {
         tablet: 640,
         desktop: 1024,
     },
+    arrowSizes: [4, 8, 16, 24, 32],
 };
 
 export default theme;
