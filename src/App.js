@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { ModalProvider } from 'styled-react-modal';
 import theme from './theme';
 import TextDocs from './components/Text/docs';
 import { CaptionText } from './components/Text';
@@ -7,7 +8,15 @@ import ButtonDocs from './components/Button/docs';
 import Example from './components/Example';
 import IconDocs from './components/Icon/docs';
 import TooltipDocs from './components/Tooltip/docs';
+import NotificationBar from './components/NotificationBar/docs';
+import CardDocs from './components/Card/docs';
 import { ButtonSmall } from './components/Button';
+import { ModalBackground } from './components/Modal';
+import ModalDocs from './components/Modal/docs';
+import ProgressBarDocs from './components/ProgressBar/docs';
+import TabsDocs from './components/Tabs/docs';
+import Tabs from './components/Tabs';
+import PaginationDocs from './components/Pagination/docs';
 
 // Important to reset browser styles
 const GlobalStyle = createGlobalStyle`
@@ -27,6 +36,10 @@ const GlobalStyle = createGlobalStyle`
   th {
       font-weight: normal;
       text-align: left;
+  }
+
+  small {
+      display: inline-block;
   }
 `;
 
@@ -71,15 +84,15 @@ const elementsToDo = [
     { label: 'Text', done: true },
     { label: 'Colours', done: true },
     { label: 'Icons', done: false },
-    { label: 'Tooltips', done: false },
-    { label: 'Tabs', done: false },
+    { label: 'Tooltips', done: true },
+    { label: 'Tabs', done: true },
     { label: 'Dropdowns', done: false },
     { label: 'Forms', done: false },
-    { label: 'Alerts', done: false },
-    { label: 'Overlays', done: false },
-    { label: 'Cards', done: false },
+    { label: 'NotificationsBar', done: true },
+    { label: 'Modals', done: true },
+    { label: 'Cards', done: true },
     { label: 'DatePicker', done: false },
-    { label: 'ProgressBar', done: false },
+    { label: 'ProgressBar', done: true },
     { label: 'Pagination', done: false },
 ];
 
@@ -88,33 +101,42 @@ const StyleGuide = () => (
         <ButtonDocs />
         <TextDocs />
         <Example />
+        <TooltipDocs />
+        <IconDocs />
+        <NotificationBar />
+        <CardDocs />
+        <ModalDocs />
+        <ProgressBarDocs />
+        <TabsDocs />
+        <PaginationDocs />
     </div>
 );
 
-const Playground = () => {
-    return (
-        <div>
-            <TooltipDocs />
-            <IconDocs />
-            <CaptionText>Todo</CaptionText>
-            <ul>
-                {elementsToDo.map((item, idx) => (
-                    <li key={idx} style={{ textDecoration: item.done ? 'line-through' : 'none' }}>
-                        {item.label}
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-};
+const Playground = () => (
+    <div>
+        <CaptionText>Todo</CaptionText>
+        <ul>
+            {elementsToDo.map((item, idx) => (
+                <li key={idx} style={{ opacity: item.done ? 0.5 : 1 }}>
+                    {item.label}
+                </li>
+            ))}
+        </ul>
+    </div>
+);
 class App extends Component {
     render() {
         return (
             <ThemeProvider theme={theme}>
-                <div>
-                    <GlobalStyle />
-                    <BasicRouter />
-                </div>
+                <ModalProvider backgroundComponent={ModalBackground}>
+                    <div>
+                        <GlobalStyle />
+                        <Tabs>
+                            <Playground label="Playground" />
+                            <StyleGuide label="StyleGuide" />
+                        </Tabs>
+                    </div>
+                </ModalProvider>
             </ThemeProvider>
         );
     }
