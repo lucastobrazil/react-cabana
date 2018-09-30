@@ -6,15 +6,18 @@ import {
     boxShadow,
     space,
     width,
+    height,
     fontSize,
     color,
     textAlign,
     fontFamily,
+    display,
 } from 'styled-system';
 
 const Box = styled.div`
   ${space}
   ${width}
+  ${height}
   ${fontSize}
   ${color}
   ${border}
@@ -23,6 +26,7 @@ const Box = styled.div`
   ${boxShadow}
   ${textAlign}
   ${fontFamily}
+  ${display}
 `;
 
 export default Box;
