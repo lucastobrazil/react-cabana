@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { lineHeight, color, space, fontFamily, fontWeight, textAlign, fontSize } from 'styled-system';
+import { lineHeight, color, space, fontFamily, fontWeight, textAlign, fontSize, flex } from 'styled-system';
 
 const TextPrimitive = styled.span`
     ${color};
@@ -10,6 +10,7 @@ const TextPrimitive = styled.span`
     ${fontFamily};
     ${fontWeight};
     ${lineHeight};
+    ${flex};
 `;
 
 TextPrimitive.propTypes = {
